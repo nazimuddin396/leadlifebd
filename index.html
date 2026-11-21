@@ -689,6 +689,18 @@
 .group-checks{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}.group-checks label{display:flex;align-items:center;gap:7px;padding:9px;border:1px solid #eee;border-radius:10px;font-size:12px;background:#fff}.group-checks input{accent-color:#ff5722}
 @media(max-width:380px){.resell-menu-grid{gap:5px}.resell-menu-grid button{font-size:9px}.resell-clean-banner{height:145px}}
 
+
+/* Added service request and admin notice popups */
+.service-request-card{background:#fff;border:1px solid #eee;border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 6px 20px #17203308}
+.service-request-hero{background:linear-gradient(135deg,#fff4ed,#fff);border:1px solid #ffddce;border-radius:18px;padding:18px;margin-bottom:14px}
+.service-request-hero .service-hero-icon{width:54px;height:54px;border-radius:16px;background:#ff5722;color:#fff;display:grid;place-items:center;font-size:23px;margin-bottom:12px}
+.service-request-form .form-group{margin:12px 0}.service-request-form input,.service-request-form textarea,.service-request-form select{width:100%;box-sizing:border-box;border:1px solid #e5e7eb;border-radius:11px;padding:12px;font:inherit;background:#fff}
+.service-request-form textarea{min-height:105px;resize:vertical}.service-request-submit{width:100%;border:0;border-radius:12px;padding:13px;background:#ff5722;color:#fff;font-weight:800;font-size:14px}
+.login-notice-overlay{position:fixed;inset:0;z-index:10020;background:#101828b8;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(5px)}
+.login-notice-overlay.open{display:flex;animation:noticeFade .22s ease}.login-notice-box{width:min(100%,460px);max-height:88vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 24px 70px #0005;position:relative;animation:noticePop .28s ease}
+.login-notice-image{display:block;width:100%;max-height:300px;object-fit:cover;background:#f4f4f4}.login-notice-body{padding:20px}.login-notice-title{font-size:19px;font-weight:900;color:#202633;margin:0 34px 9px 0}.login-notice-caption{font-size:14px;line-height:1.7;color:#586174;white-space:pre-wrap;overflow-wrap:anywhere}.login-notice-close{position:absolute;right:12px;top:12px;width:36px;height:36px;border:0;border-radius:50%;background:#fff;color:#333;font-size:23px;box-shadow:0 2px 12px #0002;z-index:2}
+@keyframes noticeFade{from{opacity:0}to{opacity:1}}@keyframes noticePop{from{transform:translateY(12px) scale(.97);opacity:.7}to{transform:none;opacity:1}}
+
 </style>
 
 </head>
@@ -853,6 +865,8 @@
         const AD_LANDING_URL = "https://asiafilm.org/4/7150fa0d1821ca2e6ff8ce3b6330abef";
         let userProfile = null;
         let currentPage = 'home';
+        let currentComingSoonName = 'এই সার্ভিস';
+        let pendingServiceTarget = null;
         let currentHomePostId = null;
         let notifListenerRef = null;
         let currentJobId = null;
@@ -997,7 +1011,22 @@
         
         function navigateProtected(page) {
             if (!userProfile || userProfile.verificationStatus !== 'verified') {
+                pendingServiceTarget = { page, name: page };
                 showVerifyPopup();
+                return;
+            }
+            navigateTo(page);
+        }
+
+        function openService(name, page) {
+            if (!userProfile || userProfile.verificationStatus !== 'verified') {
+                pendingServiceTarget = { name, page };
+                showVerifyPopup();
+                return;
+            }
+            if (page === 'coming-soon') {
+                currentComingSoonName = name;
+                navigateTo('coming-soon');
                 return;
             }
             navigateTo(page);
@@ -2552,7 +2581,16 @@ ${text}
                 case 'notification': container.innerHTML = await renderNotificationsPage(); break;
                 case 'post-comments': container.innerHTML = await renderHomePostCommentsPage(); break;
                 case 'support': container.innerHTML = renderSupportPage(); break;
-                case 'coming-soon': container.innerHTML = renderComingSoonPage('এই সার্ভিস'); break;
+                case 'coming-soon': container.innerHTML = renderComingSoonPage(currentComingSoonName); break;
+                case 'service-digital-marketing': container.innerHTML = renderBusinessServicePage('digital-marketing'); break;
+                case 'service-affiliate-marketing': container.innerHTML = renderBusinessServicePage('affiliate-marketing'); break;
+                case 'service-freelancing': container.innerHTML = renderBusinessServicePage('freelancing'); break;
+                case 'service-online-learning': container.innerHTML = renderBusinessServicePage('online-learning'); break;
+                case 'service-business-partnership': container.innerHTML = renderBusinessServicePage('business-partnership'); break;
+                case 'service-graphics-branding': container.innerHTML = renderBusinessServicePage('graphics-branding'); break;
+                case 'service-web-app-development': container.innerHTML = renderBusinessServicePage('web-app-development'); break;
+                case 'service-virtual-assistant': container.innerHTML = renderBusinessServicePage('virtual-assistant'); break;
+                case 'service-business-consultancy': container.innerHTML = renderBusinessServicePage('business-consultancy'); break;
                 case 'settings':
                     container.innerHTML = renderAccountSettingsPage();
                     break;
@@ -2652,6 +2690,15 @@ ${text}
                         ${serviceItem('Micro Job', 'fa-check-circle', 'micro-job', false)}
                         ${serviceItem('Job Post', 'fa-bullhorn', 'job-post', true)}
                         ${serviceItem('SMM Work', 'fa-users', 'smm-work', true)}
+                        ${serviceItem('Affiliate Marketing', 'fa-link', 'service-affiliate-marketing', true)}
+                        ${serviceItem('Digital Marketing', 'fa-bullhorn', 'service-digital-marketing', true)}
+                        ${serviceItem('Freelancing Services', 'fa-laptop-code', 'service-freelancing', true)}
+                        ${serviceItem('Online Learning', 'fa-graduation-cap', 'service-online-learning', true)}
+                        ${serviceItem('Business Partnership', 'fa-handshake', 'service-business-partnership', true)}
+                        ${serviceItem('Graphics & Branding', 'fa-palette', 'service-graphics-branding', true)}
+                        ${serviceItem('Website & App Development', 'fa-code', 'service-web-app-development', true)}
+                        ${serviceItem('Virtual Assistant', 'fa-headset', 'service-virtual-assistant', true)}
+                        ${serviceItem('Business Consultancy', 'fa-chart-line', 'service-business-consultancy', true)}
                         ${serviceItem('Learn to Earn', 'fa-graduation-cap', 'coming-soon', true)}
                         ${serviceItem('Leadership', 'fa-trophy', 'leadership', false)}
                         ${serviceItem('Target Bonus', 'fa-bullseye', 'target-bonus', false)}
@@ -2829,9 +2876,7 @@ ${text}
         }
 
         function serviceItem(name, icon, page, protectedPage) {
-            const unavailable = ['products','agent','coming-soon'].includes(page);
-            const action = unavailable ? `navigateTo('coming-soon')` : (protectedPage ? `navigateProtected('${page}')` : `navigateTo('${page}')`);
-            return `<div class="service-item" onclick="${action}">
+            return `<div class="service-item" role="button" tabindex="0" onclick="openService('${String(name).replace(/'/g,"\\'")}', '${page}')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();openService('${String(name).replace(/'/g,"\\'")}', '${page}');}">
                 <div class="service-icon"><i class="fas ${icon}"></i></div>
                 <div class="service-label">${name}</div>
             </div>`;
@@ -3864,6 +3909,27 @@ ${text}
             return `<div class="card support-hero"><h2><i class="fas fa-headset"></i> Support Center</h2><p>LEAD LIFE Global Business Platform-এর সহায়তা ও যোগাযোগ কেন্দ্র</p></div><div class="card"><h3 style="margin-bottom:12px">Our Social Media</h3>${items.map(x=>{const valid=!!x[4]&&x[4]!=='#';return `<div class="social-support-card ${valid?'':'support-disabled'}" ${valid?`onclick="window.open('${ve(leadSafeUrl(x[4]))}','_blank','noopener')"`:`onclick="navigateTo('coming-soon')"`}><div class="social-support-icon" style="background:${x[3]}"><i class="${x[0]==='Support'?'fas':'fab'} ${x[2]}"></i></div><span><b>${x[0]}</b><small>${x[1]}</small></span><em>${valid?'Visit':'Coming Soon'}</em></div>`;}).join('')}</div>`;
         }
 
+        const BUSINESS_SERVICE_CATALOG = {
+            'digital-marketing': {name:'Digital Marketing',icon:'fa-bullhorn',desc:'আপনার ব্যবসা বা ব্র্যান্ডের অনলাইন প্রচার, ক্যাম্পেইন পরিকল্পনা ও গ্রোথ সাপোর্টের জন্য আবেদন করুন।',fields:'আপনার ব্যবসা/ব্র্যান্ড, লক্ষ্য ও প্রয়োজনীয় সার্ভিস লিখুন।'},
+            'affiliate-marketing': {name:'Affiliate Marketing',icon:'fa-link',desc:'অ্যাফিলিয়েট পার্টনারশিপ, প্রচার কৌশল ও কমিশনভিত্তিক কাজের বিষয়ে যোগাযোগ করুন।',fields:'আপনার প্রচার মাধ্যম, অডিয়েন্স ও পরিকল্পনা লিখুন।'},
+            'freelancing': {name:'Freelancing Services',icon:'fa-laptop-code',desc:'ডিজিটাল কাজ, ফ্রিল্যান্সিং সার্ভিস ও প্রজেক্ট সহযোগিতার জন্য অনুরোধ পাঠান।',fields:'কোন কাজ বা দক্ষতার সার্ভিস প্রয়োজন তা লিখুন।'},
+            'online-learning': {name:'Online Learning',icon:'fa-graduation-cap',desc:'অনলাইন কোর্স, স্কিল ডেভেলপমেন্ট ও শেখার সুযোগ সম্পর্কে আগ্রহ জানান।',fields:'আপনি কোন বিষয় শিখতে চান তা লিখুন।'},
+            'business-partnership': {name:'Business Partnership',icon:'fa-handshake',desc:'ব্যবসায়িক সহযোগিতা, যৌথ উদ্যোগ বা পার্টনারশিপ প্রস্তাব পাঠান।',fields:'আপনার ব্যবসা ও পার্টনারশিপ প্রস্তাব লিখুন।'},
+            'graphics-branding': {name:'Graphics & Branding',icon:'fa-palette',desc:'লোগো, ব্যানার, সোশ্যাল মিডিয়া ডিজাইন ও ব্র্যান্ডিং কাজের অনুরোধ পাঠান।',fields:'কী ধরনের ডিজাইন প্রয়োজন এবং কোনো রেফারেন্স থাকলে লিখুন।'},
+            'web-app-development': {name:'Website & App Development',icon:'fa-code',desc:'ওয়েবসাইট, ওয়েব অ্যাপ, অটোমেশন বা অ্যাপ ডেভেলপমেন্ট প্রজেক্ট জমা দিন।',fields:'প্রজেক্টের ফিচার, রেফারেন্স ও প্রয়োজনীয়তা লিখুন।'},
+            'virtual-assistant': {name:'Virtual Assistant',icon:'fa-headset',desc:'অনলাইন সহকারী, ডাটা ম্যানেজমেন্ট ও দৈনন্দিন ডিজিটাল কাজের সহায়তা চান।',fields:'কাজের ধরন, সময় ও দায়িত্বের বিবরণ লিখুন।'},
+            'business-consultancy': {name:'Business Consultancy',icon:'fa-chart-line',desc:'ব্যবসা পরিকল্পনা, অনলাইন উপস্থিতি ও গ্রোথ বিষয়ে পরামর্শের জন্য আবেদন করুন।',fields:'আপনার ব্যবসার বর্তমান অবস্থা ও সমস্যার বিবরণ লিখুন।'}
+        };
+        function renderBusinessServicePage(key){
+            const s=BUSINESS_SERVICE_CATALOG[key]; if(!s)return renderComingSoonPage('এই সার্ভিস');
+            return `<div class="service-request-hero"><div class="service-hero-icon"><i class="fas ${s.icon}"></i></div><h2 style="margin:0 0 7px;color:#222">${s.name}</h2><p style="margin:0;color:#657080;line-height:1.65;font-size:13px">${s.desc}</p></div><div class="service-request-card"><h3 style="margin:0 0 6px">Service Request</h3><p style="color:#7b8492;font-size:12px;margin:0 0 14px">ফর্মটি পূরণ করলে আপনার অনুরোধ অ্যাডমিন প্যানেলে জমা হবে।</p><form class="service-request-form" onsubmit="submitBusinessServiceRequest(event,'${key}')"><div class="form-group"><label>আপনার নাম</label><input id="svcName" required maxlength="80" value="${ve(userProfile?.fullName||'')}"></div><div class="form-group"><label>মোবাইল নম্বর</label><input id="svcPhone" required maxlength="20" value="${ve(userProfile?.phoneNumber||'')}" placeholder="01XXXXXXXXX"></div><div class="form-group"><label>ইমেইল (ঐচ্ছিক)</label><input id="svcEmail" type="email" maxlength="120" value="${ve(userProfile?.email||'')}"></div><div class="form-group"><label>আপনার প্রয়োজন / বিস্তারিত</label><textarea id="svcDetails" required maxlength="2000" placeholder="${s.fields}"></textarea></div><button class="service-request-submit" id="svcSubmitBtn" type="submit"><i class="fas fa-paper-plane"></i> আবেদন জমা দিন</button></form></div><button class="btn btn-orange-outline" onclick="navigateTo('home')" style="width:100%;margin-top:8px">হোমে ফিরে যান</button>`;
+        }
+        async function submitBusinessServiceRequest(event,key){
+            event.preventDefault();const s=BUSINESS_SERVICE_CATALOG[key],uid=auth.currentUser?.uid||tgUser?.id;if(!uid||!s)return showToast('লগইন প্রয়োজন','error');if(userProfile?.verificationStatus!=='verified'){showVerifyPopup();return;}
+            const name=document.getElementById('svcName').value.trim(),phone=document.getElementById('svcPhone').value.trim(),email=document.getElementById('svcEmail').value.trim(),details=document.getElementById('svcDetails').value.trim(),btn=document.getElementById('svcSubmitBtn');if(!name||!phone||!details)return showToast('প্রয়োজনীয় তথ্য পূরণ করুন','error');
+            btn.disabled=true;btn.textContent='জমা হচ্ছে...';try{const ref=db.ref('serviceRequests').push();await ref.set({requestId:ref.key,userId:uid,affiliateId:userProfile.affiliateId||'',fullName:name,phone,email,serviceKey:key,serviceName:s.name,details,status:'pending',createdAt:Date.now(),updatedAt:Date.now()});showToast('আপনার আবেদন সফলভাবে জমা হয়েছে','success');navigateTo('home');}catch(e){showToast('আবেদন জমা হয়নি: '+(e.message||'সমস্যা হয়েছে'),'error');btn.disabled=false;btn.innerHTML='<i class="fas fa-paper-plane"></i> আবেদন জমা দিন';}
+        }
+
         function renderComingSoonPage(feature = '') {
             const d = feature ? feature : 'এই সার্ভিস';
             return `<div class="coming-soon-container premium-coming"><div class="coming-orbit"><div class="coming-soon-icon"><i class="fas fa-rocket"></i></div></div><div class="coming-soon-title">Coming Soon</div><div class="coming-soon-sub">${ve(d)} — We are preparing something better</div><div class="coming-progress"><span></span></div><div class="coming-percent"><i class="fas fa-spinner fa-spin"></i> DEVELOPMENT IN PROGRESS</div><div style="display:flex;justify-content:center;gap:7px;flex-wrap:wrap;margin:15px auto 0"><span style="background:#e8f8ee;color:#16834a;border-radius:20px;padding:6px 10px;font-size:10px;font-weight:800"><i class="fas fa-check-circle"></i> Planning</span><span style="background:#fff3e0;color:#e65100;border-radius:20px;padding:6px 10px;font-size:10px;font-weight:800"><i class="fas fa-cog fa-spin"></i> Development</span><span style="background:#f1f3f5;color:#64748b;border-radius:20px;padding:6px 10px;font-size:10px;font-weight:800"><i class="fas fa-flag"></i> Launch</span></div><div class="coming-soon-desc">এই ফিচারটির উন্নয়নের কাজ চলছে। প্রস্তুত হলে নতুন অভিজ্ঞতা নিয়ে চালু করা হবে।</div><button class="btn btn-orange" onclick="navigateTo('home')" style="width:auto;padding:12px 40px;margin-top:20px"><i class="fas fa-home"></i> Back to Home</button></div>`;
@@ -4128,12 +4194,29 @@ ${text}
                 document.getElementById('bottomNav').classList.remove('hidden');
                 navigateTo('home');
                 syncInstallUI();
+                setTimeout(showLoginNoticePopup, 650);
                 setTimeout(openSharedPostFromUrl, 500);
             } catch(e){console.error(e);renderAuthPage('login','ডেটা লোড করা যায়নি: '+e.message);}
         }
         async function initApp(){if(getReferralCodeFromUrl()) renderAuthPage('register'); else renderLandingPage();auth.onAuthStateChanged(user=>{if(user)finishLogin(user);else if(getReferralCodeFromUrl()) renderAuthPage('register'); else renderLandingPage();});}
 
         async function saveProfileChanges(){if(!userProfile||!tgUser)return;const name=document.getElementById('editFullName')?.value.trim(),file=document.getElementById('profilePhotoFile')?.files?.[0];if(!name)return showToast('নাম লিখুন','error');const btn=document.querySelector('#app-container .btn-orange');try{if(btn){btn.disabled=true;btn.textContent='সংরক্ষণ হচ্ছে...';}let photo=userProfile.profileImage||DEFAULT_PROFILE_PHOTO;if(file)photo=await uploadVendorImage(file);await db.ref(`users/${auth.currentUser ? auth.currentUser.uid : tgUser.id}`).update({fullName:name,profileImage:photo,photoUrl:photo});userProfile.fullName=name;userProfile.profileImage=photo;userProfile.photoUrl=photo;updateDrawerUI();await renderPage('profile');showToast('প্রোফাইল আপডেট হয়েছে','success');}catch(e){showToast(e.message,'error');if(btn){btn.disabled=false;btn.innerHTML='<i class="fas fa-save"></i> Save Profile';}}}
+        function showLoginNoticePopup(){
+            if(!auth.currentUser||!appSettings.loginNotice||appSettings.loginNotice.active!==true)return;
+            const n=appSettings.loginNotice,stamp=String(n.updatedAt||n.createdAt||'notice'),key=`leadlife_notice_seen_${auth.currentUser.uid}_${stamp}`;
+            if(sessionStorage.getItem(key)==='yes'||document.getElementById('loginNoticeOverlay'))return;
+            const overlay=document.createElement('div');overlay.id='loginNoticeOverlay';overlay.className='login-notice-overlay';
+            const box=document.createElement('div');box.className='login-notice-box';
+            const close=document.createElement('button');close.className='login-notice-close';close.type='button';close.setAttribute('aria-label','Close notice');close.textContent='×';
+            close.onclick=()=>{sessionStorage.setItem(key,'yes');overlay.remove();};
+            box.appendChild(close);
+            if(n.imageUrl){const img=document.createElement('img');img.className='login-notice-image';img.src=leadSafeUrl(n.imageUrl);img.alt=n.title||'Notice';img.onerror=()=>img.remove();box.appendChild(img);}
+            const body=document.createElement('div');body.className='login-notice-body';
+            if(n.title){const title=document.createElement('h3');title.className='login-notice-title';title.textContent=n.title;body.appendChild(title);}
+            if(n.caption){const cap=document.createElement('div');cap.className='login-notice-caption';cap.textContent=n.caption;body.appendChild(cap);}
+            const ok=document.createElement('button');ok.className='btn btn-orange';ok.style.cssText='width:100%;margin-top:16px';ok.textContent=n.buttonText||'ঠিক আছে';ok.onclick=close.onclick;body.appendChild(ok);box.appendChild(body);overlay.appendChild(box);overlay.addEventListener('click',e=>{if(e.target===overlay)close.onclick();});document.body.appendChild(overlay);requestAnimationFrame(()=>overlay.classList.add('open'));
+        }
+
         function showPostLoginInstallPopup(){
             if(!auth.currentUser||isAppInstalled()||localStorage.getItem('installPopupDismissed_'+auth.currentUser.uid)==='yes')return;
             if(document.getElementById('postLoginInstallPopup'))return;
@@ -4222,6 +4305,8 @@ ${text}
         window.syncInstallUI=syncInstallUI;
         window.navigateTo = navigateTo;
         window.navigateProtected = navigateProtected;
+        window.openService = openService;
+        window.submitBusinessServiceRequest = submitBusinessServiceRequest;
         window.toggleDrawer = toggleDrawer;
         window.handleClose = handleClose;
         window.handleWatchAd = handleWatchAd;
