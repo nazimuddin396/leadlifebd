@@ -719,11 +719,62 @@
 .service-request-hero .service-hero-icon{width:54px;height:54px;border-radius:16px;background:#ff5722;color:#fff;display:grid;place-items:center;font-size:23px;margin-bottom:12px}
 .service-request-form .form-group{margin:12px 0}.service-request-form input,.service-request-form textarea,.service-request-form select{width:100%;box-sizing:border-box;border:1px solid #e5e7eb;border-radius:11px;padding:12px;font:inherit;background:#fff}
 .service-request-form textarea{min-height:105px;resize:vertical}.service-request-submit{width:100%;border:0;border-radius:12px;padding:13px;background:#ff5722;color:#fff;font-weight:800;font-size:14px}
-.login-notice-overlay{position:fixed;inset:0;z-index:10020;background:#101828b8;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(5px)}
+.login-notice-overlay{position:fixed;inset:0;z-index:10020;background:#10182866;display:none;align-items:center;justify-content:center;padding:18px;backdrop-filter:blur(5px)}
 .login-notice-overlay.open{display:flex;animation:noticeFade .22s ease}.login-notice-box{width:min(100%,460px);max-height:88vh;overflow:auto;background:#fff;border-radius:22px;box-shadow:0 24px 70px #0005;position:relative;animation:noticePop .28s ease}
 .login-notice-image{display:block;width:100%;max-height:300px;object-fit:cover;background:#f4f4f4}.login-notice-body{padding:20px}.login-notice-title{font-size:19px;font-weight:900;color:#202633;margin:0 34px 9px 0}.login-notice-caption{font-size:14px;line-height:1.7;color:#586174;white-space:pre-wrap;overflow-wrap:anywhere}.login-notice-close{position:absolute;right:12px;top:12px;width:36px;height:36px;border:0;border-radius:50%;background:#fff;color:#333;font-size:23px;box-shadow:0 2px 12px #0002;z-index:2}
 @keyframes noticeFade{from{opacity:0}to{opacity:1}}@keyframes noticePop{from{transform:translateY(12px) scale(.97);opacity:.7}to{transform:none;opacity:1}}
 
+</style>
+
+
+<style id="leadlife-user-updates">
+.tutorial-card{background:#fff;border:1px solid #e7edf3;border-radius:18px;padding:14px;margin:14px 0;box-shadow:0 7px 22px rgba(20,40,60,.07)}
+.tutorial-card h3{font-size:16px;color:#263746;margin:0 0 5px;display:flex;align-items:center;gap:8px}
+.tutorial-card p{font-size:12px;color:#718096;margin:0 0 11px;line-height:1.55}
+.tutorial-frame{position:relative;width:100%;aspect-ratio:16/9;border-radius:13px;overflow:hidden;background:#101820}
+.tutorial-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+.course-page-head{padding:19px;border-radius:18px;background:linear-gradient(135deg,#102c4b,#176b75);color:white;margin-bottom:14px}
+.course-page-head h2{font-size:21px;margin:0 0 5px}.course-page-head p{font-size:12px;opacity:.86}
+.course-video-card{background:#fff;border:1px solid #e8edf2;border-radius:17px;overflow:hidden;margin:12px 0;box-shadow:0 5px 18px rgba(20,40,60,.06)}
+.course-video-card .course-video-frame{width:100%;aspect-ratio:16/9;background:#111}
+.course-video-card iframe{width:100%;height:100%;border:0}
+.course-video-info{padding:13px}.course-video-info h3{font-size:15px;color:#273746;margin:0 0 5px}.course-video-info p{font-size:11px;color:#7b8794;margin:0 0 10px}
+.course-progress-track{height:7px;border-radius:20px;background:#e9eef3;overflow:hidden}.course-progress-fill{height:100%;background:linear-gradient(90deg,#18a66a,#55cf9a);border-radius:20px;width:0}
+.course-progress-meta{display:flex;justify-content:space-between;font-size:10px;color:#718096;margin-top:6px}
+.verify-home-benefits{background:linear-gradient(145deg,#fff,#f4fbff);border:2px solid #d6a84c;border-radius:18px;padding:16px;margin:15px 0;box-shadow:0 8px 24px rgba(177,133,39,.12)}
+.verify-home-benefits h3{color:#805a12;font-size:16px;margin-bottom:10px}.verify-home-benefits .verify-benefit-item{display:flex;gap:8px;padding:7px 0;border-bottom:1px dashed #eadbb9;font-size:12px;color:#405060}.verify-home-benefits .verify-benefit-item:last-child{border-bottom:0}
+.wallet-balance-card{background:linear-gradient(135deg,#fff,#fff5ef)!important;border:1px solid #ffd2bf!important;box-shadow:0 8px 24px rgba(230,74,25,.09)}
+.wallet-menu-item{transition:transform .18s,box-shadow .18s}.wallet-menu-item:active{transform:scale(.985);box-shadow:0 5px 15px #0001}
+.income-history-list{max-height:none!important;overflow:visible!important}.notification-list{max-height:none!important;overflow:visible!important}
+.home-post-stats span[onclick]{cursor:pointer}
+.resell-modern-card .resell-card-summary{min-height:28px}
+@media(max-width:390px){.tutorial-card{padding:11px}.course-video-info{padding:11px}}
+</style>
+
+
+<style id="leadlife-user-refinements-2026">
+/* Registration video on the public landing page */
+.landing-registration-tutorial{margin:14px 0 0;padding:13px;border:1.5px solid #ffd1bf;border-radius:17px;background:linear-gradient(135deg,#fff,#fff7f2);box-shadow:0 7px 20px rgba(230,74,25,.08)}
+.landing-registration-tutorial h3{font-size:15px;color:#b8421b;margin:0 0 5px}.landing-registration-tutorial p{font-size:11px;color:#778;margin:0 0 10px}
+.landing-registration-tutorial .tutorial-frame{position:relative;aspect-ratio:16/9;border-radius:12px;overflow:hidden;background:#111}.landing-registration-tutorial iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+/* Reduce login notice backdrop blur and darkness */
+.login-notice-overlay{background:rgba(12,22,34,.22)!important;backdrop-filter:blur(1px)!important;-webkit-backdrop-filter:blur(1px)!important}
+/* Verification CTA between services and online shopping */
+.home-verify-benefits{margin:14px 0 16px;padding:16px;border:1.5px solid #e5bd67;border-radius:18px;background:linear-gradient(145deg,#fffdf7,#fff7e8);box-shadow:0 7px 22px rgba(165,119,24,.11)}
+.home-verify-benefits h3{font-size:16px;color:#79530e;margin:0 0 8px}.home-verify-benefits .benefit-row{display:flex;gap:9px;align-items:flex-start;padding:7px 0;border-bottom:1px dashed #ead9b3;font-size:12px;color:#4d5660}.home-verify-benefits .benefit-row:last-of-type{border-bottom:0}
+.home-verify-benefits .verify-now-badge{display:inline-flex;align-items:center;gap:7px;margin-top:12px;padding:9px 14px;border-radius:30px;background:linear-gradient(100deg,#ff7a35,#e64a19);color:#fff;font-size:12px;font-weight:800;box-shadow:0 5px 13px rgba(230,74,25,.2);border:0}
+/* Wallet balance panel without the extra heading card */
+.wallet-balance-card{border-radius:19px!important;padding:19px!important;background:linear-gradient(135deg,#fff,#fff5ee)!important;border:1px solid #ffd3c2!important;box-shadow:0 8px 23px rgba(230,74,25,.09)!important;margin-bottom:13px}
+/* Complete income list; show clear earning source */
+.income-history-list,.history-list,.card .history-item{max-height:none!important;overflow:visible!important}
+.history-item{align-items:center;gap:10px;padding:13px 10px;border-bottom:1px solid #edf0f2}.history-source{display:block;margin-top:4px;color:#16834a;font-size:11px;font-weight:700}.history-meta{white-space:normal;line-height:1.5}
+/* Course layout: one selected player, then compact playlist */
+.course-page-head{padding:18px;border-radius:18px;background:linear-gradient(135deg,#102c4b,#176b75);color:#fff;margin-bottom:13px}.course-page-head h2{font-size:20px;margin:0 0 5px}.course-page-head p{font-size:12px;opacity:.88}
+.course-current-card{background:#fff;border:1px solid #e6edf2;border-radius:17px;overflow:hidden;box-shadow:0 6px 20px rgba(20,40,60,.07);margin-bottom:15px}.course-current-player{aspect-ratio:16/9;background:#111}.course-current-player iframe{width:100%;height:100%;border:0}.course-current-info{padding:13px}.course-current-info h3{font-size:15px;margin:0 0 5px;color:#263746}.course-current-info p{font-size:11px;color:#778;margin:0 0 9px}
+.course-playlist-title{font-size:15px;font-weight:800;color:#263746;margin:14px 2px 9px}.course-playlist{display:flex;flex-direction:column;gap:9px}.course-playlist-item{display:flex;align-items:center;gap:10px;padding:9px;border:1px solid #e7edf2;border-radius:13px;background:#fff;text-align:left;width:100%;cursor:pointer}.course-playlist-item.active{border:1.5px solid #1b9b69;background:#f2fff8}.course-playlist-thumb{width:104px;flex:0 0 104px;aspect-ratio:16/9;border-radius:9px;background:#17212a;color:#fff;display:grid;place-items:center;position:relative;overflow:hidden}.course-playlist-thumb img{width:100%;height:100%;object-fit:cover}.course-playlist-thumb i{position:absolute;font-size:24px;text-shadow:0 2px 7px #000}.course-playlist-info{flex:1;min-width:0}.course-playlist-info b{display:block;font-size:12px;color:#2d3b48;line-height:1.35}.course-playlist-info small{display:block;font-size:10px;color:#89949e;margin:4px 0}.course-playlist-progress{height:6px;border-radius:20px;background:#e9eef2;overflow:hidden}.course-playlist-progress span{display:block;height:100%;border-radius:20px;background:linear-gradient(90deg,#16a36a,#69d5a3)}.course-playlist-percent{display:block;text-align:right;font-size:9px;color:#16834a;font-weight:800;margin-top:3px}
+/* Reselling card and product detail */
+.resell-modern-card .product-info{padding:10px}.resell-modern-card .product-name{font-size:13px;line-height:1.4;min-height:35px}.resell-modern-card .product-order-btn{width:100%;margin-top:8px;border-radius:9px;font-size:11px;padding:9px}.resell-detail-price-grid{margin:12px 0}.resell-actionbar{margin:10px 0 12px}
+@media(max-width:380px){.course-playlist-thumb{width:88px;flex-basis:88px}.course-playlist-item{gap:8px;padding:8px}.course-playlist-info b{font-size:11px}}
 </style>
 
 </head>
@@ -837,7 +888,7 @@
     <div class="bottom-nav hidden" id="bottomNav">
         <div class="nav-item active" onclick="navigateTo('home')" data-page="home"><i class="fas fa-home"></i><span>Home</span></div>
         <div class="nav-item" onclick="navigateTo('micro-job')" data-page="micro-job"><i class="fas fa-briefcase"></i><span>Tasks</span></div>
-        <div class="nav-item nav-item-center" onclick="navigateTo('ad-view')" data-page="ad-view"><div class="nav-icon-circle"><i class="fas fa-play"></i></div><span>Ads</span></div>
+        <div class="nav-item nav-item-center" onclick="navigateTo('course')" data-page="course"><div class="nav-icon-circle"><i class="fas fa-play"></i></div><span>Course</span></div>
         <div class="nav-item" onclick="navigateTo('wallet')" data-page="wallet"><i class="fas fa-wallet"></i><span>Wallet</span></div>
         <div class="nav-item" onclick="navigateTo('network')" data-page="network"><i class="fas fa-users"></i><span>Network</span></div>
     </div>
@@ -1498,6 +1549,7 @@ Reject হলে আবার ভেরিফাই করতে পারবে
 
                 showToast('Request submitted!', 'success');
                 navigateTo('home');
+                setTimeout(showVerificationCongratsPopup, 180);
             } catch (error) {
                 showToast('Failed: ' + error.message, 'error');
                 btn.disabled = false;
@@ -3598,7 +3650,7 @@ ${text}
             if (status === 'verified') {
                 return `<div class="verify-premium-hero"><div class="verify-shield"><i class="fas fa-shield-check"></i></div><h2 style="margin:0 0 7px">অ্যাকাউন্ট ভেরিফাইড</h2><p style="font-size:12px;opacity:.9;margin:0">আপনার অ্যাকাউন্ট সফলভাবে ভেরিফাই করা হয়েছে।</p></div><div class="card" style="text-align:center;padding:20px"><i class="fas fa-check-circle" style="font-size:42px;color:#16a36a;margin-bottom:10px"></i><h3 style="color:#16834a">Already Verified ✓</h3><p style="font-size:13px;color:#778;margin-top:8px">LEAD LIFE-এর ভেরিফাইড সুবিধাগুলো ব্যবহার করতে পারবেন।</p></div>${benefits}`;
             }
-            return `<div class="verify-premium-hero"><div class="verify-shield"><i class="fas fa-shield-alt"></i></div><h2 style="margin:0 0 7px">Account Verification</h2><p style="font-size:12px;opacity:.9;margin:0">আপনার অ্যাকাউন্ট ভেরিফাই করে LEAD LIFE-এর সার্ভিসগুলো আনলক করুন।</p></div><div class="verify-form-card"><div class="verify-fee-card"><div style="font-size:12px;color:#7b8794;margin-bottom:5px">এককালীন ভেরিফিকেশন ফি</div><div><span class="verify-fee-old">৳৫০০</span><span class="verify-fee-current">৳${fee.toFixed(2).replace(/\.00$/,'')}</span></div><div style="font-size:10px;color:#14846d;margin-top:4px"><i class="fas fa-tag"></i> বর্তমান কার্যকর ফি</div></div><div class="verification-instruction">নিচের bKash / Nagad নম্বরে <b>৳${fee.toFixed(2).replace(/\.00$/,'')}</b> Send Money করুন। পেমেন্ট সম্পন্ন হলে Transaction ID ও প্রেরকের নম্বর দিয়ে আবেদন জমা দিন।</div><div class="payment-number-box"><div style="font-size:13px;color:#555;margin-bottom:5px">bKash / Nagad · Send Money</div><div class="number">${ve(paymentNum)}</div><button class="copy-btn" onclick="copyToClipboard('${ve(paymentNum)}','নম্বর কপি হয়েছে')"><i class="fas fa-copy"></i> Copy Number</button></div><form onsubmit="handleVerificationSubmit(event)"><div class="form-group"><label>আপনার নাম</label><input type="text" class="form-control" value="${ve(userProfile?.fullName||'')}" readonly></div><div class="form-group"><label>Telegram Username</label><input type="text" class="form-control" value="@${ve(userProfile?.username||'N/A')}" readonly></div><div class="form-group"><label>Affiliate ID</label><input type="text" class="form-control" value="${ve(userProfile?.affiliateId||'')}" readonly></div><div class="form-group"><label>Payment Method</label><select id="verifyMethod" class="form-control" required><option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option><option value="bKash">bKash</option><option value="Nagad">Nagad</option></select></div><div class="form-group"><label>Payment Amount</label><input type="number" id="verifyAmount" class="form-control" value="${fee}" readonly></div><div class="form-group"><label>Sender Number</label><input type="tel" id="verifySenderNumber" class="form-control" placeholder="01XXXXXXXXX" required></div><div class="form-group"><label>Transaction ID</label><input type="text" id="verifyTrxId" class="form-control" placeholder="Transaction ID লিখুন" required></div><button type="submit" id="verifySubmitBtn" class="btn btn-orange" style="width:100%;border-radius:12px;padding:13px"><i class="fas fa-paper-plane"></i> ভেরিফিকেশন আবেদন জমা দিন</button></form></div>${benefits}`;
+            return `<div class="verify-premium-hero"><div class="verify-shield"><i class="fas fa-shield-alt"></i></div><h2 style="margin:0 0 7px">Account Verification</h2><p style="font-size:12px;opacity:.9;margin:0">আপনার অ্যাকাউন্ট ভেরিফাই করে LEAD LIFE-এর সার্ভিসগুলো আনলক করুন।</p></div><div class="verify-form-card"><div class="verify-fee-card"><div style="font-size:12px;color:#7b8794;margin-bottom:5px">ভেরিফিকেশন ফি <span style="display:inline-block;margin-left:6px;padding:3px 8px;border-radius:20px;background:#e8f8ef;color:#16834a;font-weight:800">মেয়াদ আজীবন</span></div><div><span class="verify-fee-old">৳৫০০</span><span class="verify-fee-current">৳${fee.toFixed(2).replace(/\.00$/,'')}</span></div><div style="font-size:10px;color:#14846d;margin-top:4px"><i class="fas fa-tag"></i> বর্তমান কার্যকর ফি</div></div><div class="verification-instruction">নিচের bKash / Nagad নম্বরে <b>৳${fee.toFixed(2).replace(/\.00$/,'')}</b> Send Money করুন। পেমেন্ট সম্পন্ন হলে Transaction ID ও প্রেরকের নম্বর দিয়ে আবেদন জমা দিন।</div><div class="payment-number-box"><div style="font-size:13px;color:#555;margin-bottom:5px">bKash / Nagad · Send Money</div><div class="number">${ve(paymentNum)}</div><button class="copy-btn" onclick="copyToClipboard('${ve(paymentNum)}','নম্বর কপি হয়েছে')"><i class="fas fa-copy"></i> Copy Number</button></div><form onsubmit="handleVerificationSubmit(event)"><div class="form-group"><label>আপনার নাম</label><input type="text" class="form-control" value="${ve(userProfile?.fullName||'')}" readonly></div><div class="form-group"><label>Affiliate ID</label><input type="text" class="form-control" value="${ve(userProfile?.affiliateId||'')}" readonly></div><div class="form-group"><label>Payment Method</label><select id="verifyMethod" class="form-control" required><option value="">পেমেন্ট মাধ্যম নির্বাচন করুন</option><option value="bKash">bKash</option><option value="Nagad">Nagad</option></select></div><div class="form-group"><label>Payment Amount</label><input type="number" id="verifyAmount" class="form-control" value="${fee}" readonly></div><div class="form-group"><label>Sender Number</label><input type="tel" id="verifySenderNumber" class="form-control" placeholder="01XXXXXXXXX" required></div><div class="form-group"><label>Transaction ID</label><input type="text" id="verifyTrxId" class="form-control" placeholder="Transaction ID লিখুন" required></div><button type="submit" id="verifySubmitBtn" class="btn btn-orange" style="width:100%;border-radius:12px;padding:13px"><i class="fas fa-paper-plane"></i> ভেরিফিকেশন আবেদন জমা দিন</button></form></div>${benefits}`;
         }
 
         // --- Wallet Page ---
@@ -4254,7 +4306,7 @@ ${text}
                 document.getElementById('bottomNav').classList.remove('hidden');
                 navigateTo('home');
                 syncInstallUI();
-                setTimeout(showLoginNoticePopup, 650);
+                setTimeout(showLoginNoticePopup, 3000);
                 setTimeout(openSharedPostFromUrl, 500);
             } catch(e){console.error(e);renderAuthPage('login','ডেটা লোড করা যায়নি: '+e.message);}
         }
@@ -4576,8 +4628,6 @@ async function renderResellingPage() {
         return `<div class="product-card resell-modern-card" data-group="${ve(groups.join(','))}" data-search="${ve((p.name+' '+(p.description||'')+' '+(p.shopName||'')).toLowerCase())}" onclick="openResellProduct('${p._key}')">
             <div class="resell-card-image"><img src="${ve(imgs[0]||'https://via.placeholder.com/240')}" class="product-img" alt="${ve(p.name||'Product')}" onerror="this.src='https://via.placeholder.com/240'"><span class="resell-card-tag">${tag}</span><button class="resell-heart" type="button" onclick="event.stopPropagation();toggleSaveResellProduct('${p._key}')">${saved[p._key]?'♥':'♡'}</button></div>
             <div class="product-info"><div class="product-name">${ve(p.name||'Product')}</div>
-            <div class="resell-price-row resell-price-top"><b>৳${Number(p.discountPrice||0).toFixed(0)}</b><del>৳${Number(p.maxSellingPrice||0).toFixed(0)}</del><small>লাভ ৳${profit.toFixed(0)} পর্যন্ত</small></div>
-            <div class="resell-card-summary">${ve(shortDescription)}</div>
             <button class="product-order-btn" type="button" onclick="event.stopPropagation();openResellProduct('${p._key}')"><i class="fas fa-eye"></i> বিস্তারিত দেখুন</button></div></div>`;
     };
     const group=(key,title,icon)=>{const list=products.filter(p=>getProductGroups(p).includes(key));return list.length?`<section class="resell-product-section"><h3><span><i class="fas ${icon}"></i> ${title}</span><small>${list.length} টি</small></h3><div class="grid-2">${list.slice(0,12).map(card).join('')}</div></section>`:'';};
@@ -4606,8 +4656,9 @@ async function renderResellDetailPage(){let p=currentResellProductCache;if(!p&&c
  return `${vendorPageHeader('Product Details','প্রোডাক্ট দেখুন ও বিক্রি শুরু করুন','reselling')}<div class="card"><div id="resellSwipeArea" style="position:relative;touch-action:pan-y"><img id="resellMainImage" src="${ve(images[idx]||'https://via.placeholder.com/300')}" style="width:100%;height:300px;object-fit:contain;background:#f8f8f8;border-radius:12px"><button onclick="changeResellImage(-1)" style="position:absolute;left:8px;top:45%;border:0;border-radius:50%;width:36px;height:36px;background:#0007;color:white"><i class="fas fa-chevron-left"></i></button><button onclick="changeResellImage(1)" style="position:absolute;right:8px;top:45%;border:0;border-radius:50%;width:36px;height:36px;background:#0007;color:white"><i class="fas fa-chevron-right"></i></button><div id="resellImageCounter" style="position:absolute;bottom:10px;right:12px;background:#0008;color:white;padding:3px 9px;border-radius:20px;font-size:11px">${idx+1}/${images.length}</div></div>
  <div style="display:flex;gap:7px;overflow-x:auto;margin:10px 0">${images.map((u,i)=>`<img onclick="setResellImage(${i})" src="${ve(u)}" style="width:58px;height:58px;flex-shrink:0;object-fit:cover;border-radius:8px;border:2px solid ${i===idx?'#ff5722':'#eee'}">`).join('')}</div>
  <h2 style="font-size:20px;margin:12px 0">${ve(p.name)}</h2><p style="font-size:13px;color:#777">Vendor: ${ve(p.shopName||p.vendorName||'')}</p>
+ <div class="grid-2 resell-detail-price-grid"><div style="background:#fff3e0;padding:12px;border-radius:10px"><small>Vendor Price</small><b style="display:block;color:#ff5722;font-size:20px">৳${Number(p.discountPrice||0).toFixed(2)}</b></div><div style="background:#e8f5e9;padding:12px;border-radius:10px"><small>সম্ভাব্য সর্বোচ্চ লাভ</small><b style="display:block;color:#16834a;font-size:20px">৳${profit.toFixed(2)}</b></div></div>
  <div class="resell-actionbar"><button class="primary" onclick="openResellOrderPage()"><i class="fas fa-shopping-bag"></i> অর্ডার করুন</button><button title="Share" onclick="shareResellProduct()"><i class="fas fa-share-alt"></i></button><button title="Copy" onclick="copyResellField('all')"><i class="fas fa-copy"></i></button><button title="Download" onclick="downloadResellImages()"><i class="fas fa-download"></i></button><button title="Save" onclick="toggleSaveResellProduct('${p._key}')"><i class="fas fa-heart"></i></button></div>
- <p style="white-space:pre-wrap;line-height:1.7;margin:12px 0">${ve(p.description)}</p><div class="grid-2"><div style="background:#fff3e0;padding:12px;border-radius:10px"><small>Vendor Price</small><b style="display:block;color:#ff5722;font-size:20px">৳${Number(p.discountPrice||0).toFixed(2)}</b></div><div style="background:#e8f5e9;padding:12px;border-radius:10px"><small>সম্ভাব্য সর্বোচ্চ লাভ</small><b style="display:block;color:#16834a;font-size:20px">৳${profit.toFixed(2)}</b></div></div>${p.sizes?.length?`<p style="margin-top:12px"><b>Size:</b> ${p.sizes.map(ve).join(', ')}</p>`:''}
+ <p style="white-space:pre-wrap;line-height:1.7;margin:12px 0">${ve(p.description)}</p>${p.sizes?.length?`<p style="margin-top:12px"><b>Size:</b> ${p.sizes.map(ve).join(', ')}</p>`:''}
  <div style="margin-top:20px"><h3 style="margin-bottom:10px">Related Products</h3><div class="grid-2">${related.slice(0,4).map(x=>`<div class="product-card" onclick="openResellProduct('${x._key}')"><img class="product-img" src="${ve(vendorProductImages(x)[0]||'https://via.placeholder.com/120')}"><div class="product-info"><div class="product-name">${ve(x.name)}</div><div class="product-price">৳${Number(x.discountPrice||0).toFixed(0)}</div></div></div>`).join('')}</div></div></div>
  `;
 }
@@ -4628,6 +4679,305 @@ document.addEventListener('touchstart',function(e){if(e.target.closest('#resellS
 document.addEventListener('touchend',function(e){if(window.__resellTouchX==null||!e.target.closest('#resellSwipeArea'))return;const dx=e.changedTouches[0].screenX-window.__resellTouchX;if(Math.abs(dx)>35)changeResellImage(dx<0?1:-1);window.__resellTouchX=null;},{passive:true});
 
 </script>
+
+<script id="leadlife-user-feature-updates">
+(function(){
+  const regTutorial = 'https://www.youtube.com/embed/PhsW9tH4f3s?rel=0';
+  const verifyTutorial = 'https://www.youtube.com/embed/R4muIkBeXTo?rel=0';
+  const esc = v => (typeof ve === 'function' ? ve(v) : String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])));
+  function tutorialCard(title,desc,url){
+    return `<section class="tutorial-card"><h3><i class="fas fa-circle-play" style="color:#ff5722"></i>${title}</h3><p>${desc}</p><div class="tutorial-frame"><iframe src="${url}" title="${title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div></section>`;
+  }
+
+  // Registration tutorial: directly below the bordered app-download control.
+  const originalAuthPage = window.renderAuthPage;
+  if(typeof originalAuthPage === 'function'){
+    window.renderAuthPage = function(tab='login',message=''){
+      originalAuthPage(tab,message);
+      if(tab==='register'){
+        const card=document.querySelector('.auth-card');
+        const download=card?.querySelector('.auth-download-pulse');
+        if(download && !card.querySelector('#registrationTutorial')){
+          const wrap=document.createElement('div');wrap.id='registrationTutorial';
+          wrap.innerHTML=tutorialCard('রেজিস্ট্রেশন টিউটোরিয়াল','ওয়েবসাইট থেকেই ভিডিও দেখে ধাপে ধাপে অ্যাকাউন্ট তৈরি করুন।',regTutorial);
+          download.insertAdjacentElement('afterend',wrap);
+        }
+      }
+    };
+  }
+
+  // Verification tutorial and removal of the Telegram username field.
+  const originalVerificationPage = window.renderVerificationPage;
+  if(typeof originalVerificationPage === 'function'){
+    window.renderVerificationPage = function(){
+      let html=originalVerificationPage();
+      html=html.replace(/<div class="form-group"><label>Telegram Username<\/label>[\s\S]*?<\/div>/i,'');
+      return html + tutorialCard('ভেরিফিকেশন টিউটোরিয়াল','ভেরিফিকেশন আবেদন কীভাবে জমা দেবেন তা ভিডিওতে দেখুন।',verifyTutorial);
+    };
+  }
+
+  // Show the exact verification benefits on the signed-in home page, below Our Services.
+  const originalHomePage = window.renderHomePage;
+  if(typeof originalHomePage === 'function'){
+    window.renderHomePage = async function(){
+      let html=await originalHomePage();
+      if(false && userProfile?.verificationStatus==='verified' && typeof renderVerificationBenefits==='function'){
+        const benefits=renderVerificationBenefits().replace('verify-benefits','verify-home-benefits');
+        html=html.replace(/(<\/div>\s*<\/div>\s*)(\$\{productsHtml\})/,`$1${benefits}$2`);
+        if(!html.includes('verify-home-benefits')){
+          const marker='Our Services';
+          const at=html.indexOf(marker), gridStart=html.indexOf('<div class="grid-4">',at);
+          if(at>=0 && gridStart>=0){
+            let pos=gridStart,depth=0,gridEnd=-1;
+            const tags=/<\/?div\b[^>]*>/gi; tags.lastIndex=gridStart;
+            let m; while((m=tags.exec(html))){if(/^<\s*div\b/i.test(m[0]))depth++;else depth--;if(depth===0){gridEnd=tags.lastIndex;break;}}
+            if(gridEnd>0)html=html.slice(0,gridEnd)+benefits+html.slice(gridEnd);
+          }
+        }
+      }
+      return html;
+    };
+  }
+
+  // Courses: admin panel will publish records under courseVideos/{pushId}.
+  const originalRenderPage = window.renderPage;
+  window.renderPage = async function(page){
+    if(page==='course'){
+      const container=document.getElementById('app-container');
+      if(userProfile?.verificationStatus!=='verified'){
+        container.innerHTML=`<div class="card" style="text-align:center;padding:28px"><i class="fas fa-lock" style="font-size:42px;color:#ff9800"></i><h3 style="margin:10px 0">কোর্স দেখতে ভেরিফিকেশন প্রয়োজন</h3><p style="font-size:13px;color:#778;margin-bottom:15px">অ্যাকাউন্ট ভেরিফাই করার পর সব কোর্স ভিডিও দেখতে পারবেন।</p><button class="btn btn-orange" onclick="navigateTo('verification')">ভেরিফাই করুন</button></div>`;
+        return;
+      }
+      container.innerHTML=await renderCourseVideosPage();
+      return;
+    }
+    return originalRenderPage.call(this,page);
+  };
+
+  const originalNavigateTo = window.navigateTo;
+  window.navigateTo = function(page,options={}){
+    if(page==='course' && userProfile?.verificationStatus!=='verified'){
+      return originalNavigateTo.call(this,'verification',options);
+    }
+    return originalNavigateTo.call(this,page,options);
+  };
+
+  window.renderCourseVideosPage = async function(){
+    let videos=[];
+    try{
+      const snap=await db.ref('courseVideos').once('value');
+      snap.forEach(c=>{const v=c.val()||{};if(v.active!==false && v.status!=='hidden' && (v.youtubeUrl||v.videoUrl||v.url))videos.push({_key:c.key,...v});});
+    }catch(e){console.error('Course videos load failed',e);}
+    videos.sort((a,b)=>Number(a.order||0)-Number(b.order||0) || Number(a.createdAt||0)-Number(b.createdAt||0));
+    if(!videos.length)return `<div class="course-page-head"><h2><i class="fas fa-graduation-cap"></i> LEAD LIFE Courses</h2><p>আপনার শেখার যাত্রা শুরু করুন</p></div><div class="card empty-state"><i class="fas fa-video"></i><p>এখনো কোনো কোর্স ভিডিও যুক্ত করা হয়নি। পরে আবার দেখুন।</p></div>`;
+    const uid=auth.currentUser?.uid||userProfile?.uid||'guest';
+    const progressSnap=await db.ref(`courseProgress/${uid}`).once('value').catch(()=>null);
+    const progress=progressSnap?.val()||{};
+    return `<div class="course-page-head"><h2><i class="fas fa-graduation-cap"></i> LEAD LIFE Courses</h2><p>ধাপে ধাপে ভিডিও দেখে শিখুন। প্রতিটি ভিডিও ওয়েবসাইট থেকেই চালাতে পারবেন।</p></div>
+      <div class="card" style="padding:12px"><b style="font-size:13px">মোট ${videos.length}টি কোর্স ভিডিও</b><p style="font-size:11px;color:#788;margin-top:3px">ভিডিও দেখার অগ্রগতি এই ডিভাইস/অ্যাকাউন্টে সংরক্ষিত থাকবে।</p></div>
+      ${videos.map((v,i)=>{
+        const url=String(v.youtubeUrl||v.videoUrl||v.url||'');
+        const match=url.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]{11})/);
+        const embed=match?`https://www.youtube.com/embed/${match[1]}?rel=0`:'';
+        const pct=Math.max(0,Math.min(100,Number(progress[v._key]?.percent||0)));
+        const duration=v.duration||v.videoDuration||'';
+        return `<article class="course-video-card"><div class="course-video-frame">${embed?`<iframe src="${embed}" title="${esc(v.title||'Course video')}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`:`<div style="padding:20px;color:white;text-align:center">ভিডিও লিংক সঠিক নয়</div>`}</div><div class="course-video-info"><h3>${i+1}. ${esc(v.title||'কোর্স ভিডিও')}</h3><p>${duration?`সময়: ${esc(duration)} · `:''}${esc(v.description||'ভিডিওটি দেখে ধাপে ধাপে শিখুন।')}</p><div class="course-progress-track"><div class="course-progress-fill" style="width:${pct}%"></div></div><div class="course-progress-meta"><span>আপনার অগ্রগতি</span><b>${pct}%</b></div><button class="btn btn-orange btn-sm" style="margin-top:11px" onclick="setCourseProgress('${esc(v._key)}',100)">ভিডিও সম্পন্ন করেছি</button></div></article>`;
+      }).join('')}`;
+  };
+  window.setCourseProgress = async function(id,percent){
+    const uid=auth.currentUser?.uid||userProfile?.uid;if(!uid)return showToast('লগইন প্রয়োজন','error');
+    try{await db.ref(`courseProgress/${uid}/${id}`).update({percent,updatedAt:Date.now()});showToast('কোর্সের অগ্রগতি সংরক্ষণ হয়েছে','success');await renderPage('course');}
+    catch(e){showToast('অগ্রগতি সংরক্ষণ করা যায়নি','error');}
+  };
+
+  // Load all notifications, rather than an arbitrary last-100 subset.
+  window.renderNotificationsPage = async function(){
+    const uid=currentNotificationUid();if(!uid)return '<div class="card">নোটিফিকেশন দেখতে লগইন করুন।</div>';
+    const snap=await db.ref(`userNotifications/${uid}`).once('value'),items=[];
+    snap.forEach(c=>items.push({key:c.key,...(c.val()||{})}));
+    items.sort((a,b)=>Number(b.createdAt||0)-Number(a.createdAt||0));
+    const unread=items.filter(n=>!n.read).length;
+    return `<section class="notification-page"><div class="card notification-page-head"><div><h2><i class="fas fa-bell"></i> Notifications</h2><p>${items.length} টি আপডেট · ${unread} টি অপঠিত</p></div><button onclick="markAllNotificationsRead()"><i class="fas fa-check-double"></i> সব পড়া হয়েছে</button></div>${items.length?`<div class="notification-list">${items.map(n=>`<article class="notification-row ${n.read?'is-read':'is-unread'}" onclick="openNotificationPost('${esc(n.postId||n.key)}','${esc(n.key)}')"><div class="notification-icon"><i class="fas fa-newspaper"></i></div><div class="notification-content"><b>${esc(n.title||'নতুন পোস্ট')}</b><p>${esc(n.message||'LEAD LIFE-এর নতুন পোস্ট দেখুন')}</p><small><i class="far fa-clock"></i> ${formatSocialTime(n.createdAt||Date.now())}</small></div><span class="notification-dot"></span></article>`).join('')}</div>`:'<div class="card notification-empty"><i class="far fa-bell"></i><b>এখনো কোনো নোটিফিকেশন নেই</b><p>নতুন পোস্ট প্রকাশ হলে এখানে দেখতে পাবেন।</p></div>'}</section>`;
+  };
+  window.openNotificationPost = async function(postId,notificationKey){
+    const uid=currentNotificationUid();
+    if(uid&&notificationKey)await db.ref(`userNotifications/${uid}/${notificationKey}/read`).set(true).catch(()=>{});
+    const snap=await db.ref(`homePosts/${postId}`).once('value').catch(()=>null);
+    if(!snap?.exists()){
+      showToast('এই নোটিফিকেশনটির পোস্ট আর পাওয়া যাচ্ছে না।','error');
+      if(uid)updateNotificationBadge();
+      return;
+    }
+    currentHomePostId=postId;
+    await markPostViewOnce(postId);
+    navigateTo('home');
+    await renderPage('home');
+    requestAnimationFrame(()=>{const el=document.getElementById('homePost-'+postId);if(el){el.scrollIntoView({behavior:'smooth',block:'start'});el.classList.add('post-highlight');}});
+    if(uid)updateNotificationBadge();
+  };
+
+  // Idempotent view counter: each signed-in account contributes one view per post.
+  window.markPostViewOnce = async function(postId){
+    const uid=auth.currentUser?.uid||tgUser?.id||userProfile?.uid;
+    if(!postId||!uid)return false;
+    const viewRef=db.ref(`homePosts/${postId}/viewers/${uid}`);
+    const result=await viewRef.transaction(current=>current ? undefined : {viewedAt:Date.now()});
+    if(result.committed){
+      const postRef=db.ref(`homePosts/${postId}`);
+      await postRef.transaction(post=>{
+        if(!post)return post;
+        const current=Math.max(Number(post.views||0),Number(post.viewCount||0));
+        post.views=current+1;
+        post.viewCount=current+1;
+        return post;
+      });
+      return true;
+    }
+    return false;
+  };
+
+  // Premium wallet presentation while preserving existing wallet actions/data.
+  const originalWalletPage=window.renderWalletPage;
+  if(typeof originalWalletPage==='function'){
+    window.renderWalletPage=function(){
+      const html=originalWalletPage();
+      return html;
+    };
+  }
+
+  // Better product card layout: image, title, short details; details action opens full details.
+  const originalResellPage=window.renderResellingPage;
+  if(typeof originalResellPage==='function'){
+    window.renderResellingPage=async function(){ return await originalResellPage(); };
+  }
+  const originalResellDetail=window.renderResellDetailPage;
+  if(typeof originalResellDetail==='function'){
+    window.renderResellDetailPage=async function(){ return await originalResellDetail(); };
+  }
+})();
+</script>
+
+
+<script id="leadlife-user-refinements-script">
+(function(){
+  const REG_VIDEO='https://www.youtube.com/embed/PhsW9tH4f3s?rel=0';
+  const esc=v=>typeof ve==='function'?ve(v):String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const frame=(url,title)=>`<div class="tutorial-frame"><iframe src="${url}" title="${title}" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></div>`;
+
+  // Landing page: tutorial appears beneath the app-install bordered area, not inside registration.
+  const oldLanding=window.renderLandingPage;
+  if(typeof oldLanding==='function'){
+    window.renderLandingPage=function(){const result=oldLanding.apply(this,arguments);requestAnimationFrame(()=>{
+      const wrap=document.querySelector('.install-pulse-wrap');
+      if(wrap&&!document.getElementById('landingRegistrationTutorial')){
+        const section=document.createElement('section');section.id='landingRegistrationTutorial';section.className='landing-registration-tutorial';
+        section.innerHTML=`<h3><i class="fas fa-circle-play" style="color:#f15a2a;margin-right:6px"></i> রেজিস্ট্রেশন টিউটোরিয়াল</h3><p>ওয়েবসাইট থেকেই ভিডিও দেখে সহজে অ্যাকাউন্ট তৈরি করুন।</p>${frame(REG_VIDEO,'রেজিস্ট্রেশন টিউটোরিয়াল')}`;
+        wrap.insertAdjacentElement('afterend',section);
+      }
+    });return result;};
+  }
+  // Existing registration wrapper from previous version used to append tutorial to the form. Remove it.
+  const oldAuth=window.renderAuthPage;
+  if(typeof oldAuth==='function')window.renderAuthPage=function(){const r=oldAuth.apply(this,arguments);requestAnimationFrame(()=>document.getElementById('registrationTutorial')?.remove());return r;};
+
+  // Place the verification benefits in a separate premium card between Services and Online Shopping.
+  const oldHome=window.renderHomePage;
+  if(typeof oldHome==='function')window.renderHomePage=async function(){
+    let html=await oldHome.apply(this,arguments);
+    html=html.replace(/<div class="verify-home-benefits">[\s\S]*?<\/div>/g,'');
+    if(userProfile?.verificationStatus!=='verified'){
+      const benefits=(typeof renderVerificationBenefits==='function'?renderVerificationBenefits():'');
+      const rows=[
+        'সকল উপলভ্য ভেরিফাইড সার্ভিস ও কার্যক্রম ব্যবহারের সুযোগ',
+        'যোগ্যতা ও প্ল্যাটফর্মের নিয়ম অনুযায়ী রেফারেল কমিশন ও বোনাস সুবিধা',
+        'ওয়ালেট, ইনকাম ও অন্যান্য প্রিমিয়াম ফিচার ব্যবহারের সুযোগ'
+      ];
+      let card=`<section class="home-verify-benefits"><h3><i class="fas fa-shield-check" style="margin-right:6px"></i> ভেরিফিকেশন করলে যেসব সুবিধা পাবেন</h3>${rows.map(x=>`<div class="benefit-row"><i class="fas fa-check-circle" style="color:#169b65;margin-top:2px"></i><span>${x}</span></div>`).join('')}<button class="verify-now-badge" type="button" onclick="navigateTo('verification')"><i class="fas fa-badge-check"></i> Verify Now</button></section>`;
+      const servicesAt=html.indexOf('Our Services');
+      if(servicesAt>=0){
+        const servicesEnd=html.indexOf('</div>\n                </div>',servicesAt);
+        if(servicesEnd>=0){const insertAt=servicesEnd+('</div>\n                </div>').length;html=html.slice(0,insertAt)+'\n'+card+html.slice(insertAt);}
+        else {const shoppingAt=html.indexOf('Online Shopping');if(shoppingAt>=0){const cardAt=html.lastIndexOf('<div class="card"',shoppingAt);html=html.slice(0,cardAt)+card+html.slice(cardAt);}}
+      }
+    }
+    return html;
+  };
+
+  // Course page: a single selected video player followed by a compact playlist with each video's progress.
+  let courseRows=[],selectedCourseId='';
+  window.renderCourseVideosPage=async function(){
+    const uid=auth.currentUser?.uid||userProfile?.uid||'guest';
+    const snap=await db.ref('courseVideos').once('value');courseRows=[];
+    snap.forEach(c=>{const v=c.val()||{};if(v.active!==false&&v.status!=='hidden'&&(v.youtubeUrl||v.videoUrl||v.url))courseRows.push({_key:c.key,...v});});
+    courseRows.sort((a,b)=>Number(a.order||0)-Number(b.order||0)||Number(a.createdAt||0)-Number(b.createdAt||0));
+    const ps=await db.ref(`courseProgress/${uid}`).once('value').catch(()=>null),progress=ps?.val()||{};
+    if(!courseRows.length)return `<div class="course-page-head"><h2><i class="fas fa-graduation-cap"></i> LEAD LIFE Courses</h2><p>আপনার শেখার যাত্রা শুরু করুন</p></div><div class="card" style="text-align:center;padding:28px;color:#87919a"><i class="fas fa-video" style="font-size:34px;margin-bottom:10px"></i><p>এখনো কোনো কোর্স ভিডিও যুক্ত করা হয়নি।</p></div>`;
+    if(!courseRows.some(v=>v._key===selectedCourseId))selectedCourseId=courseRows[0]._key;
+    const selected=courseRows.find(v=>v._key===selectedCourseId)||courseRows[0];
+    setTimeout(()=>initCourseProgressPlayer(selected._key),450);
+    const youtube=String(selected.youtubeUrl||selected.videoUrl||selected.url||'');
+    const m=youtube.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]{11})/);
+    const embed=m?`https://www.youtube.com/embed/${m[1]}?rel=0`:'';
+    const pct=Math.max(0,Math.min(100,Number(progress[selected._key]?.percent||0)));
+    return `<div class="course-page-head"><h2><i class="fas fa-graduation-cap"></i> LEAD LIFE Courses</h2><p>${courseRows.length}টি ভিডিও · ভিডিও নির্বাচন করে শিখুন</p></div>
+      <section class="course-current-card"><div class="course-current-player">${embed?`<iframe id="leadCoursePlayer" src="${embed}${embed.includes('?')?'&':'?'}enablejsapi=1" title="${esc(selected.title||'Course video')}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>`:`<div style="color:#fff;padding:25px;text-align:center">ভিডিও লিংকটি সঠিক নয়</div>`}</div><div class="course-current-info"><h3>${esc(selected.title||'কোর্স ভিডিও')}</h3><p>${selected.duration?`সময়: ${esc(selected.duration)} · `:''}${esc(selected.description||'ভিডিওটি দেখে ধাপে ধাপে শিখুন।')}</p><div class="course-playlist-progress"><span style="width:${pct}%"></span></div><small id="courseCurrentPercent" style="display:block;text-align:right;color:#16834a;font-weight:800;font-size:10px;margin-top:4px">আপনার অগ্রগতি ${pct}%</small><button class="btn btn-orange" style="margin-top:10px;width:100%" onclick="setCourseProgress('${esc(selected._key)}',100)">${pct>=100?'সম্পন্ন হয়েছে ✓':'ভিডিও সম্পন্ন করেছি'}</button></div></section>
+      <h3 class="course-playlist-title"><i class="fas fa-list-ul"></i> সব কোর্স ভিডিও</h3><div class="course-playlist">${courseRows.map((v,i)=>{const u=String(v.youtubeUrl||v.videoUrl||v.url||''),id=(u.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/|shorts\/))([A-Za-z0-9_-]{11})/)||[])[1],pr=Math.max(0,Math.min(100,Number(progress[v._key]?.percent||0)));return `<button data-course-id="${esc(v._key)}" class="course-playlist-item ${v._key===selected._key?'active':''}" type="button" onclick="selectCourseVideo('${esc(v._key)}')"><span class="course-playlist-thumb">${id?`<img src="https://img.youtube.com/vi/${id}/mqdefault.jpg" alt="">`:''}<i class="fas fa-play-circle"></i></span><span class="course-playlist-info"><b>${i+1}. ${esc(v.title||'কোর্স ভিডিও')}</b><small>${v.duration?esc(v.duration)+' · ':''}${pr>=100?'সম্পন্ন':'চলমান'}</small><span class="course-playlist-progress"><span style="width:${pr}%"></span></span><span class="course-playlist-percent">${pr}% সম্পন্ন</span></span></button>`;}).join('')}</div>`;
+  };
+  window.selectCourseVideo=async function(id){selectedCourseId=id;const c=document.getElementById('app-container');if(c)c.innerHTML=await renderCourseVideosPage();};
+  // Track actual YouTube playback progress and persist percentage to Firebase.
+  window.__leadCourseSelectedId='';window.__leadCoursePlayer=null;window.__leadCoursePoll=null;window.__leadCourseLastSaved={};
+  window.initCourseProgressPlayer=function(courseId){
+    window.__leadCourseSelectedId=courseId;
+    if(window.__leadCoursePoll){clearInterval(window.__leadCoursePoll);window.__leadCoursePoll=null;}
+    if(window.__leadCoursePlayer&&typeof window.__leadCoursePlayer.destroy==='function'){try{window.__leadCoursePlayer.destroy();}catch(e){}}
+    const start=()=>{
+      const iframe=document.getElementById('leadCoursePlayer');if(!iframe||!window.YT||!window.YT.Player)return;
+      try{window.__leadCoursePlayer=new YT.Player('leadCoursePlayer',{events:{onReady:function(){
+        window.__leadCoursePoll=setInterval(async function(){
+          const player=window.__leadCoursePlayer;if(!player||typeof player.getDuration!=='function')return;
+          const duration=Number(player.getDuration()||0),current=Number(player.getCurrentTime()||0);if(duration<=0)return;
+          const percent=Math.max(0,Math.min(100,Math.floor(current/duration*100)));
+          const label=document.getElementById('courseCurrentPercent');if(label)label.textContent='আপনার অগ্রগতি '+percent+'%';
+          const fill=document.querySelector('.course-current-info .course-playlist-progress span');if(fill)fill.style.width=percent+'%';
+          document.querySelectorAll('.course-playlist-item').forEach(item=>{if(item.dataset.courseId===courseId){const bar=item.querySelector('.course-playlist-progress span'),txt=item.querySelector('.course-playlist-percent');if(bar)bar.style.width=percent+'%';if(txt)txt.textContent=percent+'% সম্পন্ন';}});
+          const uid=auth.currentUser?.uid||userProfile?.uid;if(!uid)return;
+          const last=Number(window.__leadCourseLastSaved[courseId]||-1);
+          if(percent===100||last<0||percent-last>=2){window.__leadCourseLastSaved[courseId]=percent;db.ref(`courseProgress/${uid}/${courseId}`).update({percent,updatedAt:Date.now(),lastPosition:current,duration}).catch(()=>{});}
+        },3000);
+      },onStateChange:function(event){if(event.data===YT.PlayerState.ENDED){window.setCourseProgress(courseId,100);}}}});}
+      catch(e){console.warn('Course player progress tracking unavailable',e);}
+    };
+    if(window.YT&&window.YT.Player){start();return;}
+    if(!document.getElementById('youtubeIframeApi')){const tag=document.createElement('script');tag.id='youtubeIframeApi';tag.src='https://www.youtube.com/iframe_api';document.head.appendChild(tag);}
+    const previous=window.onYouTubeIframeAPIReady;window.onYouTubeIframeAPIReady=function(){if(typeof previous==='function')previous();start();};
+  };
+
+  // Save clear earning source information in the income history display.
+  const oldIncome=window.renderIncomeHistoryPage;
+  const incomeTypeNames={ad:'বিজ্ঞাপন দেখে আয়',adview:'বিজ্ঞাপন দেখে আয়',ad_view:'বিজ্ঞাপন দেখে আয়',ad_reward:'বিজ্ঞাপন দেখে আয়',micro_job:'মাইক্রো জব থেকে আয়',job_reward:'মাইক্রো জব থেকে আয়',micro_job_reward:'মাইক্রো জব থেকে আয়',microjob:'মাইক্রো জব থেকে আয়',micro_job_income:'মাইক্রো জব থেকে আয়',referral:'রেফারেল কমিশন',referral_bonus:'রেফারেল কমিশন',target_bonus:'টার্গেট বোনাস',welcome_bonus:'ওয়েলকাম বোনাস',signup_bonus:'রেজিস্ট্রেশন বোনাস',salary:'মাসিক আয়',commission:'কমিশন',reselling_profit:'রিসেলিং লাভ',product_profit:'প্রোডাক্ট বিক্রির লাভ',task_reward:'টাস্ক সম্পন্ন করার আয়'};
+  window.renderIncomeHistoryPage=async function(){
+    const {transactions}=await getWalletLedgerData();
+    const incomes=transactions.filter(t=>Number(t.amount||0)>0&&!['rejected','cancelled'].includes(String(t.status||'').toLowerCase()));
+    const sourceOf=t=>{const type=String(t.type||t.transactionType||t.category||'').replace(/([a-z])([A-Z])/g,'$1_$2').toLowerCase().replace(/[ -]/g,'_');return t.sourceTitle||t.incomeSource||t.sourceName||t.jobTitle||t.taskTitle||t.offerTitle||t.adTitle||t.reason||incomeTypeNames[type]||t.title||t.source||t.category||'অন্যান্য ইনকাম';};
+    const rows=incomes.map(t=>{const source=sourceOf(t),title=t.title&& !/^income$/i.test(t.title)?t.title:source;const details=[t.description,t.referenceId?`রেফারেন্স: ${t.referenceId}`:'',t.jobId?`Job ID: ${t.jobId}`:''].filter(Boolean).join(' · ');return `<div class="history-item"><div class="history-info"><div class="history-title">${esc(title)}</div><span class="history-source"><i class="fas fa-arrow-trend-up"></i> আয়ের উৎস: ${esc(source)}</span><div class="history-meta">${formatDateTime(t.createdAt)} · ${esc(t.status||'completed')}${details?' · '+esc(details):''}</div></div><div class="history-amount positive">+৳${Number(t.amount||0).toFixed(2)}</div></div>`;}).join('');
+    return `<div class="card"><div style="display:flex;align-items:center;gap:10px;margin-bottom:15px"><button class="btn-sm btn-orange-outline" onclick="navigateTo('wallet')" style="width:auto"><i class="fas fa-arrow-left"></i></button><h3 style="color:var(--primary-orange)">All Income History</h3></div><p style="font-size:12px;color:#888;margin-bottom:12px">প্রতিটি ইনকাম কোন কাজ, সার্ভিস বা বোনাস থেকে এসেছে তা এখানে দেখুন।</p><div class="income-history-list">${rows||`<div style="text-align:center;padding:30px;color:#999"><i class="fas fa-inbox" style="font-size:40px;margin-bottom:10px"></i><p>এখনো কোনো ইনকাম রেকর্ড নেই।</p></div>`}</div></div>`;
+  };
+
+  // Premium verification success popup after successful form submission.
+  window.showVerificationCongratsPopup=function(){
+    document.getElementById('verificationCongratsOverlay')?.remove();
+    const overlay=document.createElement('div');overlay.id='verificationCongratsOverlay';overlay.style.cssText='position:fixed;inset:0;z-index:12000;background:rgba(10,20,30,.28);display:flex;align-items:center;justify-content:center;padding:18px;';
+    overlay.innerHTML=`<div style="width:100%;max-width:390px;background:#fff;border-radius:23px;padding:24px 19px;text-align:center;box-shadow:0 18px 55px #14233435;border:1px solid #e3f3e9;animation:popupIn .3s ease"><div style="width:72px;height:72px;border-radius:50%;margin:0 auto 13px;background:linear-gradient(135deg,#dff8e9,#a8edc4);color:#15945a;display:grid;place-items:center;font-size:34px"><i class="fas fa-check"></i></div><h2 style="color:#16794c;font-size:21px;margin:0 0 7px">অভিনন্দন!</h2><p style="font-size:14px;color:#344b40;font-weight:700;margin:0 0 8px">আপনার ভেরিফিকেশন আবেদন সফলভাবে জমা হয়েছে।</p><p style="font-size:12px;color:#748078;line-height:1.7;margin:0 0 17px">আপনার দেওয়া পেমেন্ট তথ্য অ্যাডমিন যাচাই করবেন। যাচাই সম্পন্ন হলে অ্যাকাউন্টের ভেরিফিকেশন স্ট্যাটাস আপডেট করা হবে। অনুগ্রহ করে অপেক্ষা করুন।</p><button type="button" onclick="document.getElementById('verificationCongratsOverlay')?.remove()" style="width:100%;border:0;border-radius:12px;padding:12px;background:linear-gradient(100deg,#19a568,#117b4d);color:#fff;font-weight:800">ঠিক আছে</button></div>`;
+    overlay.addEventListener('click',e=>{if(e.target===overlay)overlay.remove();});document.body.appendChild(overlay);
+  };
+
+  // Keep the original social post, like, comment, share and view handlers untouched.
+  // Ensure landing tutorial appears on first visit too, after DOM is ready.
+  const ensureLandingVideo=()=>{if(document.querySelector('.welcome-page')&&!document.getElementById('landingRegistrationTutorial')){const wrap=document.querySelector('.install-pulse-wrap');if(wrap){const section=document.createElement('section');section.id='landingRegistrationTutorial';section.className='landing-registration-tutorial';section.innerHTML=`<h3><i class="fas fa-circle-play" style="color:#f15a2a;margin-right:6px"></i> রেজিস্ট্রেশন টিউটোরিয়াল</h3><p>ওয়েবসাইট থেকেই ভিডিও দেখে সহজে অ্যাকাউন্ট তৈরি করুন।</p>${frame(REG_VIDEO,'রেজিস্ট্রেশন টিউটোরিয়াল')}`;wrap.insertAdjacentElement('afterend',section);}}};
+  if(document.readyState==='loading')document.addEventListener('DOMContentLoaded',ensureLandingVideo,{once:true});else setTimeout(ensureLandingVideo,0);
+})();
+</script>
+
 </body>
 </html>
 <style>
